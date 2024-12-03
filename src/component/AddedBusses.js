@@ -24,17 +24,15 @@ const AddedBus = () => {
   const handleSubmit = async(e) => {
     e.preventDefault();
     try {
-      
       const newBus = {
         busNumber,
         capacity,
         route,
       };
       
-      const response = axios.post(`${process.env.REACT_APP_API_URL}/api/admin/AddedBus`,{newBus},{withCredentials: true})
+      const response = axios.post(`${process.env.REACT_APP_API_URL}/api/admin/AddedBus`,newBus,{withCredentials: true})
       console.log("New Bus Added:", response.message);
   
-      // Clear the form
       setBusNumber("");
       setCapacity("");
       setRoute([""]);

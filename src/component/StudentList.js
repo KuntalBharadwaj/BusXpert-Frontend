@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import RemoveCircleIcon from "@mui/icons-material/RemoveCircle"; // For collapse icon
+import axios from "axios";
 
 const initialStudentList = [
   { Name: "Kuntal Bharadwaj", Id: 2111981107, present: false },
@@ -22,6 +23,14 @@ function StudentList() {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [hasChanges, setHasChanges] = useState(false);
 
+  const fetchStudent = async()=>{
+    try {
+      // const response = await axios.post("")
+    } catch (error) {
+      console.log(error.message)
+    }
+  }
+
   const toggleCollapse = () => {
     setIsCollapsed((prevState) => !prevState);
   };
@@ -36,6 +45,7 @@ function StudentList() {
   };
 
   const handleSubmit = () => {
+    // axios request
     console.log("Data saved:", students);
     setHasChanges(false);
   };
@@ -43,6 +53,10 @@ function StudentList() {
   const totalStudents = students.length;
   const presentCount = students.filter((student) => student.present).length;
   const absentCount = totalStudents - presentCount;
+
+  useEffect(()=>{
+    // fetchStudent()
+  },[])
 
   return (
     <div className="flex justify-center bg-gradient-to-br from-black to-red-800">

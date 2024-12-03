@@ -6,8 +6,6 @@ function DashboardSidebar({ isActive, setIsActive }) {
     setIsActive(pre => e.target.innerText)
   }
 
-  console.log(isActive)
-
   return (
     <div className="p-4 space-y-10">
       <h1 className="text-center text-white text-lg font-semibold p-2 border-b-2 border-red-600">

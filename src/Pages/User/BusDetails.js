@@ -36,16 +36,11 @@ function BusDetails() {
     });
 
     setIsArrived(pre=> obj);
-    console.log(isArrived);
   };
-
-  // current status
-  // useEffect(() => {
-  //   assignToisArrived();
-  // }, [BusItem.length]);
 
   useEffect(() => {
     fetchBusItem();
+    assignToisArrived()
   }, []);
 
   return (
